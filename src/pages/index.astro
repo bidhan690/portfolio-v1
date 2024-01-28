@@ -1,0 +1,38 @@
+---
+import '@/styles/globals.css'
+import Home from '@/components/sections/Home.tsx'
+import MainNav from '@/components/layout/MainNav.tsx'
+import SkillSet from '@/components/skill-set.tsx'
+import About from '@/components/sections/About.tsx'
+import Projects from '@/components/sections/Projects.tsx'
+import Contact from '@/components/sections/Contact.tsx'
+import Footer from '@/components/layout/Footer.tsx'
+import {Separator} from '@/components/ui/separator.tsx'
+import { siteConfig } from "@/config/site";
+import { Image } from 'astro:assets';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteConfig.description} />
+		<title>{siteConfig.title}</title>
+	</head>
+	<body class="bg-[#F9EFDB] flex flex-col gap-4">
+      <MainNav client:load />
+       <Separator className="px-4 md:px-12 lg:px-32 my-4 " /> 
+    <Home client:load>
+      <Image slot="AstroProfile" className="bg-gray-400 bg-center bg-cover bg-no-repeat relative transition-all w-[22rem] h-[22rem] md:w-[26rem] md:h-[26rem] border-2 rounded-bubble border-[#2d2e32] animate-bubble" src={siteConfig.profileImageUrl} alt="profile-image" width={300} height={300} />
+      </Home>
+    <SkillSet />
+    <About>
+<Image slot="AstroCoding" className="bg-center bg-cover bg-no-repeat rounded-xl" src="/assets/coding.gif" alt="animated_coding_gif" width={400} height={400}  />
+      </About>
+    <Projects />
+    <Contact />
+    <Footer />
+	</body>
+</html>
