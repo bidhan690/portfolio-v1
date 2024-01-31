@@ -28,7 +28,7 @@ const Contact: FC<ContactsProps> = ({ }) => {
               <Icons.mail className="w-8 h-8 stroke-blue-600 " />
               <div className="flex flex-col gap-1">
                 <h1 className="text-gray-800 font-extrabold">Mail</h1>
-                <p className=" text-gray-600">{siteConfig.email}</p>
+                <a href={`mailto:${siteConfig.email}`} className="text-gray-600">{siteConfig.email}</a>
               </div>
             </div>
           </div>

@@ -10,3 +10,22 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/in/bidhan-niroula",
   location: "Biratnagar, Nepal"
 };
+
+export const navLinks = [
+    {
+    href: "#about",
+    name: "About",
+  },
+    {
+    href: "#services",
+    name: "Services",
+  },
+    {
+    href: "#projects",
+    name: "Projects",
+  },
+    {
+    href: "#contact",
+    name: "Contact",
+  },
+]

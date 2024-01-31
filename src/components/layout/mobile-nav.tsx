@@ -1,5 +1,5 @@
 import { Icons } from "@/lib/Icons";
-import { FC, useEffect } from "react";
+import { FC, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -7,48 +7,41 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
+import { navLinks } from "@/config/site";
 
 interface mobileNavProps {
 }
 
 const MobileNav: FC<mobileNavProps> = ({ }) => {
-  useEffect(() => {
-  }, []);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const modalToggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="flex md:hidden">
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={modalToggle}>
         <SheetTrigger>
           <Icons.menu className="w-8 h-8" />
         </SheetTrigger>
         <SheetContent className="min-w-full">
           <SheetHeader>
-            <SheetTitle>Bidhan.dev</SheetTitle>
+            <SheetTitle>
+              <a href="/" onClick={modalToggle}>
+                Bidhan.dev
+              </a>
+            </SheetTitle>
           </SheetHeader>
-          <div className="flex flex-col gap-4">
-            <a
-              href="/#home"
-              className=" hover:text-blue-700 transition-all duration-300 hover:-translate-y-1"
-            >
-              Home
-            </a>
-            <a
-              href="/#about"
-              className="hover:text-blue-700 transition-all duration-300 hover:-translate-y-1"
-            >
-              About
-            </a>
-            <a
-              href="/#projects"
-              className="hover:text-blue-700 transition-all duration-300 hover:-translate-y-1"
-            >
-              Projects
-            </a>
-            <a
-              href="/#contact"
-              className="hover:text-blue-700 transition-all duration-300 hover:-translate-y-1"
-            >
-              Contact
-            </a>
+          <div className="h-full flex flex-col justify-center items-center gap-6 text-3xl">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={modalToggle}
+                className="hover:text-blue-700 transition-all duration-300 hover:-translate-y-1"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
         </SheetContent>
       </Sheet>

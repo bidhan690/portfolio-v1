@@ -5,13 +5,13 @@ import { FC } from "react";
 interface FooterProps {
 }
 
-const Footer: FC<FooterProps> = ({ }) => {
+const SiteFooter: FC<FooterProps> = ({ }) => {
     const currentYear = new Date().getFullYear();
   return (
     <div className="bg-black/90 w-full h-32">
       <div className="h-full px-4 md:px-12 lg:px-32 ">
         <div className="h-full flex justify-between items-center">
-          <h1 className="text-white text-xl font-bold">
+          <h1 className="text-white text-sm md:text-xl font-bold">
             Copyright © {currentYear}. All rights are reserved
           </h1>
           <div className="flex gap-3">
@@ -28,4 +28,4 @@ const Footer: FC<FooterProps> = ({ }) => {
   );
 };
 
-export default Footer;
+export default SiteFooter;
