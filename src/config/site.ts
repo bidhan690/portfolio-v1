@@ -1,7 +1,7 @@
 export const siteConfig = {
   fullName:"Bidhan Niroula",
   name: "Bidhan.dev",
-  title: "Bidhan Niroula | Full-stack Developer",
+  title: "Bidhan | Full-stack Developer",
   profileImageUrl: "/assets/profile.png",
   email: "88bidhanniroula@gmail.com",
   description:
