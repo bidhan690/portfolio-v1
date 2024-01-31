@@ -10,7 +10,7 @@ const SiteFooter: FC<FooterProps> = ({ }) => {
   return (
     <div className="bg-black/90 w-full h-32">
       <div className="h-full px-4 md:px-12 lg:px-32 ">
-        <div className="h-full flex justify-between items-center">
+        <div className="h-full flex flex-col md:flex-row justify-around md:justify-between items-center">
           <h1 className="text-white text-sm md:text-xl font-bold">
             Copyright © {currentYear}. All rights are reserved
           </h1>

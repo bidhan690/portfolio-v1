@@ -10,7 +10,7 @@ const Services: FC<ServicesProps> = ({ }) => {
     <section id="services" className="py-32">
       <div className="px-4 md:px-12 lg:px-32 ">
         <div className="w-full flex flex-col gap-4">
-          <h1 className="text-3xl text-center text-blue-600 font-semibold">
+          <h1 className="uppercase text-2xl text-center text-blue-600 font-semibold">
           Services
           </h1>
           <p className="text-xl text-center text-gray-800 font-semibold">

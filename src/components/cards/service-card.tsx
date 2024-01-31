@@ -16,8 +16,8 @@ interface ServiceCardProps {
 
 const ServiceCard: FC<ServiceCardProps> = ({ className,name,description,children }) => {
   return (
-    <Card className={cn("bg-transparent border-transparent w-[300px]", className)}>
-      <CardHeader className="items-center md:items-start">
+    <Card className={cn("bg-transparent border-transparent w-[350px]", className)}>
+      <CardHeader className="">
         {children}
       </CardHeader>
       <CardContent>
