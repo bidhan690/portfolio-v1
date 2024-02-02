@@ -12,14 +12,18 @@ export const siteConfig = {
 };
 
 export const navLinks = [
+  {
+    href: "#home",
+    name: "Home"
+  },
     {
     href: "#about",
     name: "About",
   },
-    {
-    href: "#services",
-    name: "Services",
-  },
+  //   {
+  //   href: "#services",
+  //   name: "Services",
+  // },
     {
     href: "#projects",
     name: "Projects",

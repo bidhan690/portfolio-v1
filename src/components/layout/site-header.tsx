@@ -2,31 +2,30 @@ import { FC } from "react";
 import MobileNav from "./mobile-nav";
 import { navLinks, siteConfig } from "@/config/site";
 
-interface SiteHeaderProps {
-}
+interface SiteHeaderProps {}
 
-const SiteHeader: FC<SiteHeaderProps> = ({ }) => {
+const SiteHeader: FC<SiteHeaderProps> = ({}) => {
   return (
-    <nav>
-      <div className="px-4 pt-6 md:px-12 md:pt-6 lg:px-32 lg:pt-12">
-        <div className="flex items-center justify-between">
-          <a href="/">
-            <h1 className="text-3xl font-jua ">{siteConfig.name}</h1>
-          </a>
-          <MobileNav />
-          <div className="hidden md:flex gap-x-5 text-lg font-semibold ">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:text-blue-700 transition-all duration-300 hover:-translate-y-1"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+    <nav className="py-[25px] pl-[50px] pr-[40px] z-10 shadow-md items-center bg-white flex text-3xl h-auto justify-between left-0 fixed top-0 w-full">
+      <a href="/">
+        <h1 className="text-2xl font-jua ">{siteConfig.name}</h1>
+      </a>
+      <MobileNav />
+      <ul className="hidden md:flex gap-8">
+        {navLinks.map((link) => (
+          <li
+            key={link.name}
+            className="transition-all duration-300 hover:-translate-y-1"
+          >
+            <a
+              href={link.href}
+              className="text-lg hover:text-blue-700 transition-all duration-300 text-gray-800 font-semibold no-underline"
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };

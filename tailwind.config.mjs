@@ -12,16 +12,21 @@ export default {
       },
     },
     extend: {
-      fontFamily:{
+      fontFamily: {
         jua: ["Jua", "sans-serif"],
       },
       backgroundImage: {
-        "profile": "url('/assets/profile.png')",
+        profile: "url('/assets/profile.png')",
       },
       backgroundPosition: {
         center: "50%",
       },
       colors: {
+        site: {
+          DEFAULT: "#2d2e32",
+          secondary: "#555",
+          bg: "#f9f9f9"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -88,9 +93,9 @@ export default {
         },
       },
       animation: {
-        "bubble": "morph 8s ease-in-out infinite",
+        bubble: "morph 8s ease-in-out infinite",
         "waving-hand": "wave 2s linear infinite",
-        "rotate": "spin 9s linear infinite",
+        rotate: "spin 9s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
