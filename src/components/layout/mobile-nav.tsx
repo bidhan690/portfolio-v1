@@ -25,24 +25,27 @@ const MobileNav: FC<mobileNavProps> = ({ }) => {
         </SheetTrigger>
         <SheetContent className="min-w-full">
           <SheetHeader>
-            <SheetTitle>
+            <SheetTitle className="text-site">
               <a href="/" onClick={modalToggle}>
                 Bidhan.dev
               </a>
             </SheetTitle>
           </SheetHeader>
-          <div className="h-full flex flex-col justify-center items-center gap-6 text-3xl">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={modalToggle}
-                className="hover:text-blue-700 transition-all duration-300 hover:-translate-y-1"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+            <ul className="h-full flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <li
+                  key={link.name}
+                className="text-site-secondary font-semibold uppercase"
+                >
+                  <a
+                    href={link.href}
+                    onClick={modalToggle}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
         </SheetContent>
       </Sheet>
     </div>

@@ -13,11 +13,11 @@ export const siteConfig = {
 
 export const navLinks = [
   {
-    href: "#home",
+    href: "/#home",
     name: "Home"
   },
     {
-    href: "#about",
+    href: "/#about",
     name: "About",
   },
   //   {
@@ -25,11 +25,11 @@ export const navLinks = [
   //   name: "Services",
   // },
     {
-    href: "#projects",
+    href: "/#projects",
     name: "Projects",
   },
     {
-    href: "#contact",
+    href: "/#contact",
     name: "Contact",
   },
 ]
