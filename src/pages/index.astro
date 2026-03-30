@@ -1,0 +1,69 @@
+---
+import "@/styles/globals.css";
+import Home from "@/components/sections/Home.tsx";
+import SiteHeader from "@/components/layout/site-header.tsx";
+import SkillSet from "@/components/skill-set.tsx";
+import About from "@/components/sections/About.tsx";
+import Projects from "@/components/sections/Projects.tsx";
+import Contact from "@/components/sections/Contact.tsx";
+import SiteFooter from "@/components/layout/site-footer.tsx";
+import { siteConfig } from "@/config/site";
+import { Image } from "astro:assets";
+import { getProjects } from "../lib/storyblok";
+import { Project, StoryblokProjectStory } from "@/types/project";
+
+const stories = await getProjects();
+
+const projects: Project[] = (stories as StoryblokProjectStory[])
+  .map((story) => ({
+    title: story.content.title || "",
+    description: story.content.description || "",
+    tags: story.content.tags || [],
+    longImage: story.content.longImage?.filename || "",
+    browserUrl: story.content.browserUrl || "",
+    githubUrl: story.content.githubUrl || "",
+    liveUrl: story.content.liveUrl || "",
+    featured: !!story.content.featured,
+  }))
+  .sort((a, b) => Number(b.featured) - Number(a.featured))
+  .map((project, index) => ({
+    ...project,
+    label: project.featured ? "Featured Project" : `Project ${index + 1}`,
+    reverse: index % 2 !== 0,
+  }));
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteConfig.description} />
+    <title>{siteConfig.title}</title>
+  </head>
+  <body class="bg-site-bg flex flex-col gap-4">
+    <SiteHeader client:load />
+      <Home>
+        <Image
+          class="bg-gray-400 bg-center bg-cover bg-no-repeat relative transition-all w-[20rem] h-[20rem] md:w-[22rem] md:h-[22rem] border-2 rounded-bubble border-[#2d2e32] animate-bubble"
+          src={siteConfig.profileImageUrl}
+          alt="profile-image"
+          width={300}
+          height={300}
+        />
+      </Home>
+    <About>
+      <Image
+        class="bg-center bg-cover bg-no-repeat rounded-xl"
+        src="/assets/coding.gif"
+        alt="animated_coding_gif"
+        width={400}
+        height={400}
+      />
+    </About>
+    <Projects client:visible projects={projects} />
+    <Contact />
+    <SiteFooter />
+  </body>
+</html>
