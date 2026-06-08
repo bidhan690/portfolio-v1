@@ -10,8 +10,8 @@ interface homeProps {
 const Home: FC<homeProps> = ({ children }) => {
   return (
     <section id="home" className="w-full h-screen lg:h-[44rem] mt-24 md:mt-6">
-      <div className="w-full h-full px-4 md:px-12 lg:px-40">
-        <div className="h-full flex flex-col justify-center gap-8 md:gap-4">
+      <div className="w-full h-full px-4 md:px-12 lg:px-20 xl:px-40">
+        <div className="h-full flex flex-col justify-center gap-8 md:gap-4 max-w-7xl mx-auto">
           <div className="flex  flex-col-reverse items-center lg:flex-row gap-2">
             <div className="max-w-2xl relative flex flex-col gap-3">
               <h1 className="text-4xl md:text-6xl lg:text-7xl text-center lg:text-start font-bold leading-tight">
