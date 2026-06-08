@@ -15,22 +15,22 @@ const SkillSet: FC<skillSetProps> = ({ className }) => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <img
             className="cursor-pointer transition-all duration-300 hover:-translate-y-2"
-            src="https://skillicons.dev/icons?i=html,css"
+            src="https://skillicons.dev/icons?i=react,nextjs"
             alt="skill-icon"
           />
           <img
             className="cursor-pointer transition-all duration-300 hover:-translate-y-2"
-            src="https://skillicons.dev/icons?i=js,ts"
+            src="https://skillicons.dev/icons?i=nestjs,nodejs"
             alt="skill-icon"
           />
           <img
             className="cursor-pointer transition-all duration-300 hover:-translate-y-2"
-            src="https://skillicons.dev/icons?i=react,next"
+            src="https://skillicons.dev/icons?i=graphql,mongodb"
             alt="skill-icon"
           />
           <img
             className="cursor-pointer transition-all duration-300 hover:-translate-y-2"
-            src="https://skillicons.dev/icons?i=tailwind,scss"
+            src="https://skillicons.dev/icons?i=docker,azure"
             alt="skill-icon"
           />
         </div>
